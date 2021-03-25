@@ -1,0 +1,17 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="RIGHT_MARGIN" value="500" />
+    <HTMLCodeStyleSettings>
+      <option name="HTML_KEEP_WHITESPACES" value="true" />
+      <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+      <option name="HTML_KEEP_LINE_BREAKS" value="false" />
+      <option name="HTML_KEEP_LINE_BREAKS_IN_TEXT" value="false" />
+    </HTMLCodeStyleSettings>
+    <editorconfig>
+      <option name="ENABLED" value="false" />
+    </editorconfig>
+    <codeStyleSettings language="PHP">
+      <option name="KEEP_LINE_BREAKS" value="false" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>

@@ -4,8 +4,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="mt-2 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-                        Kodėl verta akumuliatorius patikėti mums?
-                    </h2>
+                        Kodėl verta akumuliatorius patikėti mums? </h2>
                 </div>
 
                 <div class="mt-10">
@@ -14,18 +13,15 @@
                             <dt>
                                 <div class="absolute flex items-center justify-center h-16 w-16 rounded-md bg-electric">
 
-                                    <span class="iconify h-8 w-8 text-black" data-inline="false"
-                                          data-icon="grommet-icons:technology" style="font-size: 64px;"></span>
+                                    <span class="iconify h-8 w-8 text-black" data-inline="false" data-icon="grommet-icons:technology" style="font-size: 64px;"></span>
 
 
                                 </div>
-                                <p class="ml-20 text-lg leading-6 font-medium text-gray-900">Patirtis ir naujos
-                                    technologijos</p>
+                                <p class="ml-20 text-lg leading-6 font-medium text-gray-900">Patirtis ir naujos technologijos</p>
                             </dt>
 
                             <dd class="mt-2 ml-20 text-base text-gray-500">
-                                Darbai atliekami naudojant naujausias technologijas, todėl galime užtikrinti aukšta
-                                darbų kokybę.
+                                Darbai atliekami naudojant naujausias technologijas, todėl galime užtikrinti aukšta darbų kokybę.
                             </dd>
                         </div>
 
@@ -33,8 +29,7 @@
                             <dt>
                                 <div class="absolute flex items-center justify-center h-16 w-16 rounded-md bg-electric">
 
-                                    <span class="iconify" data-inline="false" data-icon="mdi:handshake-outline"
-                                          style="font-size: 38px;"></span>
+                                    <span class="iconify" data-inline="false" data-icon="mdi:handshake-outline" style="font-size: 38px;"></span>
 
 
                                 </div>
@@ -42,8 +37,7 @@
                             </dt>
 
                             <dd class="mt-2 ml-20 text-base text-gray-500">
-                                Su kiekvienu klientu bendraujama indvidualiai pagal situaciją, todėl galime pasiūlyti
-                                patrauklias kainas.
+                                Su kiekvienu klientu bendraujama indvidualiai pagal situaciją, todėl galime pasiūlyti patrauklias kainas.
                             </dd>
                         </div>
 
@@ -51,13 +45,11 @@
                             <dt>
                                 <div class="absolute flex items-center justify-center h-16 w-16 rounded-md bg-electric">
 
-                                    <span class="iconify" data-inline="false"
-                                          data-icon="fluent:battery-saver-24-regular" style="font-size: 44px;"></span>
+                                    <span class="iconify" data-inline="false" data-icon="fluent:battery-saver-24-regular" style="font-size: 44px;"></span>
 
 
                                 </div>
-                                <p class="ml-20 text-lg leading-6 font-medium text-gray-900">Aukščiausios kokybės
-                                    baterijos </p>
+                                <p class="ml-20 text-lg leading-6 font-medium text-gray-900">Aukščiausios kokybės baterijos </p>
                             </dt>
 
                             <dd class="mt-2 ml-20 text-base text-gray-500">
@@ -69,8 +61,7 @@
                             <dt>
                                 <div class="absolute flex items-center justify-center h-16 w-16 rounded-md bg-electric">
 
-                                    <span class="iconify" data-inline="false" data-icon="ic:outline-beenhere"
-                                          style="font-size: 44px;"></span>
+                                    <span class="iconify" data-inline="false" data-icon="ic:outline-beenhere" style="font-size: 44px;"></span>
 
 
                                 </div>
@@ -93,8 +84,7 @@
 
         <div class="text-center">
             <h2 class="mt-36 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
-                Mūsų atliekami darbai
-            </h2>
+                Mūsų atliekami darbai </h2>
         </div>
 
 
@@ -102,17 +92,16 @@
 
             <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
 
-                    <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore"
-                          style="font-size: 100px;"></span>
+                <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore" style="font-size: 100px;"></span>
 
-                    <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
+                <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
 
-                    <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
+                <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
             </div>
 
             <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
 
-                   <img class="w-32 mx-auto" src="{{asset('images/battery.svg')}}">
+                <img class="w-32 mx-auto" src="{{asset('images/battery.svg')}}">
 
                 <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
 
@@ -122,16 +111,77 @@
 
             <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
 
-                    <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore"
-                          style="font-size: 100px;"></span>
+                <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore" style="font-size: 100px;"></span>
 
                 <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
 
                 <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
             </div>
-
 
         </div>
+
+
+        <!-- Naudinga info -->
+        <div class="text-center">
+            <h2 class="mt-36 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
+                Naudinga informacija </h2>
+        </div>
+
+
+        <div class="flex flex-wrap -mx-1">
+
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 ">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                    <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                    <h1 class="text-lg">
+                        <a class="no-underline hover:underline text-black" href="#">
+                            Kokias baterijas pasirinkti?
+                        </a>
+                    </h1>
+                    <p class="text-grey-darker text-sm">
+                        21/03/22
+                    </p>
+                </header>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="#">
+                    <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                </a>
+
+                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                    <h1 class="text-lg">
+                        <a class="no-underline hover:underline text-black" href="#">
+                            Article Title
+                        </a>
+                    </h1>
+                    <p class="text-grey-darker text-sm">
+                        11/1/19
+                    </p>
+                </header>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        </div>
+        <!-- END Column -->
 
 
     </div>
