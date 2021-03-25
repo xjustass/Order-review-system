@@ -1,5 +1,5 @@
-<div class="bg-secondary font-body  relative ">
-    <div class="w-full mx-auto h-full max-w-screen-xl pt-20 md:pt-40 lg:pt-32 mx-0 lg:mx-auto flex flex-col md:flex-row items-center hero  ">
+<div class="bg-secondary font-body">
+    <div class="w-full mx-auto h-full max-w-screen-xl pt-20 md:pt-28 lg:pt-32 mx-0 lg:mx-auto flex flex-col md:flex-row items-center hero  ">
 
         <!--Left Col-->
         <div class="flex flex-col h-full w-full lg:w-5/6 lg:inline justify-center mt-10 lg:mt-20 pt-2 pb-24 px-4 md:px-6 mb-80 ">
@@ -11,25 +11,20 @@
                 Restauravimas.</h2>
 
             <button class="z-20 bg-primary whitespace-nowrap text-xl lg:text-2xl
-        rounded-full px-12 py-4 mt-5 border-2 border-electric hover:bg-electric
-        text-white hover:text-black hover:border-transparent items-center inline-flex mx-auto lg:px-20 lg:py-5">
+        rounded-full px-8 py-2.5 mt-5  sm:py-3 sm:mt-5  md:px-12 mx-auto lg:px-16 lg:py-5 border-2 border-electric hover:bg-electric
+        text-white hover:text-black hover:border-transparent items-center inline-flex ">
 
-                <span class="iconify text-2xl lg:text-3xl text-white mr-3" data-inline="false"
+                <span class="iconify text-xl sm:text-2xl  lg:text-3xl  mr-3" data-inline="false"
                       data-icon="clarity:phone-handset-solid"></span>
-                <span class="">Susisiekite</span>
+                <span class="text-base md:text-xl lg:text-2xl">Susisiekite</span>
 
             </button>
         </div>
 
 
     </div>
-
 </div>
 
-<div class="bg-red-300 pb-80">
-Tekstas
-
-</div>
 
 
 

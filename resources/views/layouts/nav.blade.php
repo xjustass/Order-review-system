@@ -1,7 +1,7 @@
 
-<nav class="bg-primary nav-shadow w-full font-body z-20 absolute" x-data="{ isOpen: false }">
+<nav class="bg-primary nav-shadow w-full font-body z-20" x-data="{ isOpen: false }">
 
-    <div class="py-2 px-0 w-full mx-auto max-w-screen-xl">
+    <div class="py-2 w-full mx-auto max-w-screen-xl">
         <div class="flex items-center justify-between  mx-3 md:mx-3 lg:mx-0">
 
 

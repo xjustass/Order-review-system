@@ -16,6 +16,7 @@
 <body class="">
 @include('layouts.nav')
 @include('layouts.hero')
+@include('layouts.landing_content')
 </body>
 
 </html>
