@@ -15,8 +15,10 @@
 </head>
 <body class="">
 @include('layouts.nav')
-@include('layouts.hero')
-@include('layouts.landing_content')
+
+@yield('content')
+
+@include('layouts.footer')
 </body>
 
 </html>

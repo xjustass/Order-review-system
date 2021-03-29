@@ -6,7 +6,7 @@
 
 
             <div class="flex items-center justify-between px-4 py-3">
-                <a href="#">
+                <a href="{{url('/')}}">
                     <img src="{{ asset('/images/logo1.svg') }}" alt="Batteries logo" class="h-12">
                 </a>
             </div>
@@ -32,10 +32,10 @@
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Kontaktai</a>
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Paslaugos</a>
 
-                <button type="button" aria-label="stebėti užsakymą"
+                <a href="{{url('/uzsakymo_paieska/')}}" aria-label="stebėti užsakymą"
                         class="z-20 bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent">
                     Stebėti užsakymo eigą
-                </button>
+                </a>
 
             </div>
 
@@ -50,7 +50,7 @@
         <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Paslaugos</a>
 
         <button type="button" aria-label="stebėti užsakymą"
-                class="z-20 bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent ">
+                class="z-20 bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent focus:outline-non ">
             Stebėti užsakymo eigą
         </button>
 

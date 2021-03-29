@@ -31708,30 +31708,6 @@ video {
           animation: bounce 1s infinite;
 }
 
-.hero {
-}
-
-@media (min-width: 768px){
-  .container{
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container{
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px){
-  .container{
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px){
-}
-
 .nav-shadow{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -31796,6 +31772,11 @@ video {
     background-attachment: local;
     background-size: auto 160% ;
   }
+}
+
+html{
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 @media (min-width: 640px){

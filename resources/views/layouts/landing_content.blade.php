@@ -3,7 +3,7 @@
         <div class="py-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="mt-2 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+                    <h2 class="mt-2 text-4xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                         Kodėl verta akumuliatorius patikėti mums? </h2>
                 </div>
 
@@ -23,6 +23,7 @@
                             <dd class="mt-2 ml-20 text-base text-gray-500">
                                 Darbai atliekami naudojant naujausias technologijas, todėl galime užtikrinti aukšta darbų kokybę.
                             </dd>
+
                         </div>
 
                         <div class="relative">
@@ -83,7 +84,7 @@
         <!-- Atliekami darbai -->
 
         <div class="text-center">
-            <h2 class="mt-36 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
+            <h2 class="mt-36 text-4xl sm:text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
                 Mūsų atliekami darbai </h2>
         </div>
 
@@ -123,7 +124,7 @@
 
         <!-- Naudinga info -->
         <div class="text-center">
-            <h2 class="mt-36 text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
+            <h2 class="mt-36 text-4xl sm:text-5xl mb-24 leading-tight font-extrabold tracking-tight text-gray-900 ">
                 Naudinga informacija </h2>
         </div>
 
