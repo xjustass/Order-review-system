@@ -22,6 +22,19 @@ Route::get('/uzsakymo_paieska', function () {
 });
 
 
+Route::view('/uzsakymas', 'layouts.about_order', ['name' => 'Taylor']);
+
+
+Route::get('/kainos', function () {
+    return view('layouts.prices');
+});
+
+Route::get('/kontaktai', function () {
+    return view('layouts.contact');
+});
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

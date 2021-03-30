@@ -28,8 +28,8 @@
             <div  class="px-2 hidden md:visible md:flex-row items-center pt-3 pb-4 lg:flex">
 
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Akumuliatoriai</a>
-                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Kainos</a>
-                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Kontaktai</a>
+                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kainos')}}"> Kainos</a>
+                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kontaktai')}}"> Kontaktai</a>
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Paslaugos</a>
 
                 <a href="{{url('/uzsakymo_paieska/')}}" aria-label="stebėti užsakymą"

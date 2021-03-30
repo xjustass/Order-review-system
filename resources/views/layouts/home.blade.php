@@ -12,15 +12,15 @@
             <h2 class="leading-normal text-white text-base text-center lg:text-left lg:text-3xl lg:pt-3 lg:mb-16 font-light mb-4">Baterijų gamyba.
                 Restauravimas.</h2>
 
-            <button class="z-20 bg-primary whitespace-nowrap text-xl lg:text-2xl
+            <a class="z-20 bg-primary whitespace-nowrap text-xl lg:text-2xl
         rounded-full px-8 py-2.5 mt-5  sm:py-3 sm:mt-5  md:px-12 mx-auto lg:px-16 lg:py-5 border-2 border-electric hover:bg-electric
-        text-white hover:text-black hover:border-transparent items-center inline-flex focus:outline-none ">
+        text-white hover:text-black hover:border-transparent items-center inline-flex focus:outline-none">
 
                 <span class="iconify text-xl sm:text-2xl  lg:text-3xl  mr-3" data-inline="false"
                       data-icon="clarity:phone-handset-solid"></span>
                 <span class="text-base md:text-xl lg:text-2xl">Susisiekite</span>
 
-            </button>
+            </a>
         </div>
 
 
