@@ -104,14 +104,14 @@ return [
         /*
          * Select default language
          */
-        'default' => 'en',
+        'default' => 'lt',
 
         /*
          * Select languages that are supported.
          */
         'locales' => [
+            'lt',
             'en',
-            //'pt',
         ],
     ],
 

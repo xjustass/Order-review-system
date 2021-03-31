@@ -33,6 +33,14 @@ Route::get('/kontaktai', function () {
     return view('layouts.contact');
 });
 
+Route::get('/akumuliatoriai', function () {
+    return view('layouts.batteries');
+});
+
+Route::get('/paslaugos', function () {
+    return view('layouts.services');
+});
+
 
 
 Route::group(['prefix' => 'admin'], function () {

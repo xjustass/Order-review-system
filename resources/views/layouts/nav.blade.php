@@ -27,10 +27,10 @@
 
             <div  class="px-2 hidden md:visible md:flex-row items-center pt-3 pb-4 lg:flex">
 
-                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Akumuliatoriai</a>
+                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/akumuliatoriai')}}"> Akumuliatoriai</a>
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kainos')}}"> Kainos</a>
                 <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kontaktai')}}"> Kontaktai</a>
-                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Paslaugos</a>
+                <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/paslaugos')}}"> Paslaugos</a>
 
                 <a href="{{url('/uzsakymo_paieska/')}}" aria-label="stebėti užsakymą"
                         class="z-20 bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent">
@@ -44,13 +44,13 @@
 
     <div :class="isOpen ? 'flex-col flex' : 'hidden'" class="px-2 md:flex-col items-center pt-3 pb-4 ">
 
-        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Akumuliatoriai</a>
-        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Kainos</a>
-        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Kontaktai</a>
-        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href=""> Paslaugos</a>
+        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/akumuliatoriai')}}"> Akumuliatoriai</a>
+        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kainos')}}"> Kainos</a>
+        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/kontaktai')}}"> Kontaktai</a>
+        <a class="my-1 text-sm lg:mx-4 lg:my-0 font-medium text-white" href="{{url('/paslaugos')}}"> Paslaugos</a>
 
         <button type="button" aria-label="stebėti užsakymą"
-                class="z-20 bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent focus:outline-non ">
+                class=" bg-transparent whitespace-nowrap rounded-full px-4 py-2 border-2 border-electric hover:bg-electric text-white hover:text-black hover:border-transparent focus:outline-non ">
             Stebėti užsakymo eigą
         </button>
 
