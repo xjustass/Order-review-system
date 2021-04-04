@@ -45,4 +45,7 @@ Route::get('/paslaugos', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::view('/registracija', 'vendor.voyager.registration.edit-add' );
 });
+
+
