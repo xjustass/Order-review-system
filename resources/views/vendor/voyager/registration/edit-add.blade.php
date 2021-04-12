@@ -2,4 +2,5 @@
 
 @section('content')
 <strong>Nu sveiki</strong>
+    {{$text}}
 @endsection

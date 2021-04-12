@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +45,9 @@ Route::get('/paslaugos', function () {
 
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/registracija', [OrderController::class, 'index'] )->middleware('admin.user');
     Voyager::routes();
-    Route::view('/registracija', 'vendor.voyager.registration.edit-add' );
+
 });
 
 
