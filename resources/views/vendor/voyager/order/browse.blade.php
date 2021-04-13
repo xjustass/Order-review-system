@@ -3,6 +3,14 @@
 
 @section('page_header')
 
+
+    <div class="container-fluid">
+        <h1 class="page-title">
+            <i class="voyager-book"></i> Užsakymai
+        </h1>
+    </div>
+
+
     <div class="px-4">
 
 
@@ -10,16 +18,16 @@
             <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="form-control input-sm">
+                        <div class="dataTables_length" id="dataTable_length"><label>Rodyti <select name="dataTable_length" aria-controls="dataTable" class="form-control input-sm">
                                     <option value="10">10</option>
                                     <option value="25">25</option>
                                     <option value="50">50</option>
                                     <option value="100">100</option>
-                                </select> entries</label></div>
+                                </select> rezultatų</label></div>
                     </div>
 
                     <div class="col-sm-6">
-                        <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTable"></label></div>
+                        <div id="dataTable_filter" class="dataTables_filter"><label>Paieška:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTable"></label></div>
                     </div>
                 </div>
 
@@ -70,7 +78,7 @@
 
                             @foreach( $orders  as $row)
 
-                                <tr role="row" class="odd">
+                                <tr role="row" class="">
                                     <td>
                                         <div>{{$row->id}}</div>
                                     </td>
@@ -123,22 +131,24 @@
                                     <a href="http://localhost:8000/admin/categories/2" title="View" class="btn btn-sm btn-warning pull-right view"> <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span> </a>
                                 </td>
                             </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
 
+
+
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div>
+                        <div>Rodoma nuo {{($orders->currentpage()-1)*$orders->perpage()+1}} iki {{$orders->currentpage()*$orders->perpage()}}
+                             iš  {{$orders->total()}} rezultatų
+                        </div>
                     </div>
+
                     <div class="col-sm-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button previous disabled" aria-controls="dataTable" tabindex="0" id="dataTable_previous"><a href="#">Previous</a></li>
-                                <li class="paginate_button active" aria-controls="dataTable" tabindex="0"><a href="#">1</a></li>
-                                <li class="paginate_button next disabled" aria-controls="dataTable" tabindex="0" id="dataTable_next"><a href="#">Next</a></li>
-                            </ul>
+                            {{ $orders->onEachSide(5)->links()}}
                         </div>
                     </div>
                 </div>
