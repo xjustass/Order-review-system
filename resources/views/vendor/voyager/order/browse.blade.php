@@ -14,6 +14,23 @@
     <div class="px-4">
 
 
+
+
+        @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
+
+
+            <script>
+
+                setTimeout(function() {
+                    $('.alert').fadeOut('slow');
+                }, 5000);
+
+            </script>
+
         <div class="table-responsive">
             <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
@@ -45,28 +62,19 @@
                             <thead>
 
                             <tr>
-
                                 <th>
-
                                     <a href=""> Nr.</a>
                                 </th>
                                     <th>
-
                                         <a href=""> Vardas Pavardė</a>
                                     </th>
-
                                 <th>
-
                                     <a href=""> Įmonė</a>
                                 </th>
-
                                 <th>
-
                                     <a href=""> Užsakymas</a>
                                 </th>
-
                                 <th>
-
                                     <a href=""> Užsakymas pradėtas</a>
                                 </th>
 
@@ -76,36 +84,37 @@
 
                             <tbody>
 
-                            @foreach( $orders  as $row)
+                            @foreach( $orders  as $order)
 
                                 <tr role="row" class="">
                                     <td>
-                                        <div>{{$row->id}}</div>
+                                        <div>{{$order->id}}</div>
                                     </td>
                                     <td>
-                                        <div>{{$row->first_name}} {{$row->last_name}}</div>
+                                        <div>{{$order->first_name}} {{$order->last_name}}</div>
                                     </td>
                                     <td>
                                         <div>
-                                            {{$row->company_name}}
+                                            {{$order->company_name}}
                                         </div>
                                     </td>
 
                                     <td>
                                         <div>
-                                            {{$row->service}}
+                                            {{$order->service}}
                                         </div>
                                     </td>
                                     <td>
                                         <div>
-                                            {{$row->created_at}}
+                                            {{$order->created_at}}
                                         </div>
                                     </td>
 
 
                                     <td class="no-sort no-click bread-actions">
-                                        <a href="javascript:" title="Ištrinti" class="btn btn-sm btn-danger pull-right delete" data-id="1" id="delete-1"> <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Ištrinti</span> </a> <a href="http://localhost:8000/admin/categories/1/edit" title="Redaguoti" class="btn btn-sm btn-primary pull-right edit"> <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Redaguoti</span> </a>
-                                        <a href="http://localhost:8000/admin/categories/1" title="Žiūrėti" class="btn btn-sm btn-warning pull-right view"> <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Žiūrėti</span> </a>
+                                        <a href="javascript:" title="Ištrinti" class="btn btn-sm btn-danger pull-right delete" data-id="1" id="delete-1"> <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Ištrinti</span> </a>
+                                        <a href="{{route('orders.edit', $order)}}" title="Redaguoti" class="btn btn-sm btn-primary pull-right edit"> <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Redaguoti</span> </a>
+                                        <a href="{{route('orders.show', $order)}}" title="Žiūrėti" class="btn btn-sm btn-warning pull-right view"> <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Žiūrėti</span> </a>
                                     </td>
                                 </tr>
 
@@ -148,10 +157,12 @@
 
                     <div class="col-sm-6">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            {{ $orders->onEachSide(5)->links()}}
+                            {{ $orders->onEachSide(1)->links()}}
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
 

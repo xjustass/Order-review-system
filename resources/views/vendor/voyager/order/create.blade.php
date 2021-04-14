@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <label for="FormControlInput6">Remontuojams daiktas/gaminys</label>
-                    <input type="text" name="product" class="form-control" id="FormControlInput6" placeholder="UAB"required>
+                    <input type="text" name="product" class="form-control" id="FormControlInput6" required>
                 </div>
 
 
