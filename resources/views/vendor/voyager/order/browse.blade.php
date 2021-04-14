@@ -48,19 +48,10 @@
                     </div>
                 </div>
 
-
-
                 <div class="row">
-
-
-
-
                     <div class="col-sm-12">
                         <table id="dataTable" class="table table-hover dataTable no-footer" role="grid" aria-describedby="dataTable_info">
-
-
                             <thead>
-
                             <tr>
                                 <th>
                                     <a href=""> Nr.</a>

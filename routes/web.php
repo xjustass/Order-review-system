@@ -46,10 +46,6 @@ Route::get('/paslaugos', function () {
 
 Route::group(['prefix' => 'admin'], function () {
 
-  //  Route::get('/uzsakymai', [OrderController::class, 'index'] )->middleware('admin.user');
-
-  //  Route::get('/registracija', [OrderController::class, 'create'] )->middleware('admin.user');
-
     Route::resource('orders', OrderController::class)->middleware('admin.user');
 
 

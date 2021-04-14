@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -41,14 +43,10 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOrderRequest $request)
     {
-
-
-
-
-
         //Unique code for orders
+
 
         $code= $this->generateCode();
 
@@ -56,16 +54,6 @@ class OrderController extends Controller
 
             $code= $this->generateCode();
         }
-
-        $request->validate([
-            'name' => 'required|max:45',
-            'last_name' => 'required|max:45',
-            'phone' => 'required|max:15',
-            'email' => 'required|max:320',
-            'bussines' => 'max:45',
-            'product' => 'required|max:45',
-            'additional_info' => 'required',
-        ]);
 
         $order = new Order();
         $order->order_review_code =$code;
@@ -112,24 +100,8 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(UpdateOrderRequest $request, Order $order)
     {
-
-
-        $request->validate([
-            'name' => 'required|max:45',
-            'last_name' => 'required|max:45',
-            'phone' => 'required|max:15',
-            'email' => 'required|max:320',
-            'bussines' => 'max:45',
-            'product' => 'required|max:80',
-            'additional_info' => 'max:150',
-            'status' => 'required|max:1',
-            'price' => 'max:10',
-            'work_performed' => 'max:80',
-            'notes_for_client' => 'max:100',
-        ]);
-
 
         $order->first_name = $request->name;
         $order->last_name = $request->last_name;

@@ -23,48 +23,65 @@
 
                 <div class="row">
                     <div class="col-md-6">
+
+                        @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput1">Vardas</label>
                             <input type="text" name="name" class="form-control" id="FormControlInput1" value="{{$order->first_name}}" placeholder="Jonas" required>
-
                         </div>
 
 
-
+                        @error('last_name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput2">Pavardė</label>
-                            <input type="text" name="last_name" class="form-control" id="FormControlInput2" value="{{$order->last_name}}" placeholder="Jonaitis"required>
+                            <input type="text" name="last_name" class="form-control" id="FormControlInput2" value="{{$order->last_name}}" placeholder="Jonaitis" required>
                         </div>
 
+                        @error('phone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput3">Tel. nr.</label>
                             <input type="tel" name="phone" class="form-control" id="FormControlInput1" value="{{$order->phone_number}}" placeholder="+3706123456" required>
                         </div>
 
-
+                        @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
-                            <label for="exampleFormControlInput4">El. paštas</label>
+                            <label for="FormControlInput4">El. paštas</label>
                             <input type="email" name="email" class="form-control" id="FormControlInput4" value="{{$order->email}}" placeholder="vardas@paštas.lt" required>
                         </div>
 
-
+                        @error('bussines')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput5">Įmonės pavadinimas</label>
                             <input type="text" name="bussines" class="form-control" id="FormControlInput5" value="{{$order->company_name}}" placeholder="UAB">
                         </div>
 
-
-
+                        @error('product')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput6">Remontuojams daiktas/gaminys</label>
-                            <input type="text" name="product" class="form-control" id="FormControlInput6" value="{{$order->service}}" placeholder="UAB"required>
+                            <input type="text" name="product" class="form-control" id="FormControlInput6" value="{{$order->service}}" placeholder="UAB" required>
                         </div>
 
-
+                        @error('additional_info')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                             <label for="FormControlInput7">Pastabos</label>
 
-                            <textarea class="form-control" name="additional_info" id="FormControlInput7" value="{{$order->additional_info}}" rows="3"></textarea>
+                            <textarea class="form-control" name="additional_info" id="FormControlInput7" rows="3">
+                                {{$order->additional_info}}
+                            </textarea>
                         </div>
 
 
@@ -93,6 +110,9 @@
                         </div>
 
 
+                        @error('status')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
 
                         <div class="form-group">
                             <label for="sel1">Užsakymo statusas:</label>
@@ -104,15 +124,29 @@
                             </select>
                         </div>
 
+
+                        @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                         <div class="form-group">
                             <label for="FormControlInput8">Kaina, EUR</label>
                             <input type="number" name="price" class="form-control" id="FormControlInput8" step=".01" value="{{$order->price}}">
                         </div>
 
+
+                        @error('work_performed')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                         <div class="form-group">
                             <label for="FormControlInput9">Atlikti darbai</label>
                             <input type="text" name="work_performed" class="form-control" id="FormControlInput9" value="{{$order->work_performed}}">
                         </div>
+
+                        @error('notes_for_client')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
 
                         <div class="form-group">
                             <label for="FormControlInput10">Papildoma informacija klinetui</label>
