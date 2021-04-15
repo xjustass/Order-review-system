@@ -15,6 +15,12 @@
 
 
         <div class="page-content container-fluid">
+            @php
+
+                echo DNS1D::getBarcodeHTML($order->id, 'C39');
+
+            @endphp
+
 
             <form class="edit-add" method="post" action="{{route('orders.update', $order->id)}}">
 
@@ -87,6 +93,8 @@
 
                     </div>
 
+
+
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-sm-4">
@@ -118,8 +126,8 @@
                             <label for="sel1">Užsakymo statusas:</label>
 
                             <select class="bg-danger form-control" name="status" id="sel1">
-                                <option value="0"   {{ $order->status == 0 ? 'selected' : '' }} >Vykdomas</option>
-                                <option value="1"{{ $order->status == 1 ? 'selected' : '' }}>Įvykdytas</option>
+                                <option value="0"   {{ $order->status == 0 ? 'selected' : '' }} >Priimtas</option>
+                                <option value="1"{{ $order->status == 1 ? 'selected' : '' }}>Vykdomas</option>
                                 <option value="2"{{ $order->status == 2 ? 'selected' : '' }}>Užbaigtas</option>
                             </select>
                         </div>

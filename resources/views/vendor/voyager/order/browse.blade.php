@@ -15,7 +15,6 @@
 
 
 
-
         @if(session()->has('success'))
             <div class="alert alert-success">
                 {{ session()->get('success') }}
@@ -103,34 +102,23 @@
 
 
                                     <td class="no-sort no-click bread-actions">
-                                        <a href="javascript:" title="Ištrinti" class="btn btn-sm btn-danger pull-right delete" data-id="1" id="delete-1"> <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Ištrinti</span> </a>
+
+                                        <form  method="post" action="{{ route("orders.destroy", $order->id) }}" >
+                                            @csrf
+                                            {{ method_field('delete') }}
+
+
+                                            <button type="submit" onclick="return confirm('Ar tikrai norite ištrinti?')" class="btn btn-danger pull-right delete-confirm">
+                                                <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Ištrinti</span> </button>
+
+                                        </form>
+
                                         <a href="{{route('orders.edit', $order)}}" title="Redaguoti" class="btn btn-sm btn-primary pull-right edit"> <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Redaguoti</span> </a>
                                         <a href="{{route('orders.show', $order)}}" title="Žiūrėti" class="btn btn-sm btn-warning pull-right view"> <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Žiūrėti</span> </a>
                                     </td>
                                 </tr>
 
                             @endforeach
-
-
-
-                            <tr role="row" class="even">
-                                <td>
-                                    <input type="checkbox" name="row_id" id="checkbox_2" value="2">
-                                </td>
-                                <td>
-                                    <div>1</div>
-                                </td>
-                                <td>
-                                    <div>Category 2</div>
-                                </td>
-                                <td>
-                                    <div>category-2</div>
-                                </td>
-                                <td class="no-sort no-click bread-actions">
-                                    <a href="javascript:" title="Delete" class="btn btn-sm btn-danger pull-right delete" data-id="2" id="delete-2"> <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Delete</span> </a> <a href="http://localhost:8000/admin/categories/2/edit" title="Edit" class="btn btn-sm btn-primary pull-right edit"> <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Edit</span> </a>
-                                    <a href="http://localhost:8000/admin/categories/2" title="View" class="btn btn-sm btn-warning pull-right view"> <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span> </a>
-                                </td>
-                            </tr>
 
                             </tbody>
                         </table>
@@ -158,9 +146,6 @@
         </div>
 
     </div>
-
-
-
 @stop
 
 @section('content')

@@ -17,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(20);
+        $orders = Order::orderBy('created_at', 'desc')->paginate(20);
 
 
         return view('vendor.voyager.order.browse', ['orders' => $orders]);
@@ -79,7 +79,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('vendor.voyager.order.show', compact('order'));
     }
 
     /**
@@ -131,7 +131,10 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+
+        $order->delete();
+
+        return redirect()->route('orders.index') ->with('success', 'Užsakymas ištrintas sėkmingai');
     }
 
     function generateCode(){

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,14 +45,16 @@ Route::get('/paslaugos', function () {
 
 
 
+
 Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('orders', OrderController::class)->middleware('admin.user');
 
-
+    Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->middleware('admin.user');
     Voyager::routes();
 
 
 });
+
 
 
