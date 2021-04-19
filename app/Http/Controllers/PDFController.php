@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Order;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -12,15 +12,25 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF()
+    public function generatePDF(Order $order)
     {
+
+
+
         $data = [
-            'title' => 'Dokumentas',
-            'date' => date('Y/m/d')
+            'title' => 'Užsakymo registracijos pažyma',
+            'date' => date('Y/m/d'),
+            'name' => $order->first_name,
+            'last_name' => $order->last_name,
+            'company_name' => $order->company_name,
+            'service' => $order->service,
+            'info' => $order->additional_info,
+            'code' => $order->order_review_code,
+            'id' => $order->id
+
         ];
 
         $pdf = PDF::loadView('PDF/PDF', $data);
-
         return $pdf->download('test.pdf');
     }
 }

@@ -24,8 +24,8 @@ class UpdateOrderRequest extends FormRequest
     public function rules()
     {
         return [
-                'name' => 'required|max:45',
-                'last_name' => 'required|max:45',
+                'fname' => 'required|max:45',
+                'lname' => 'required|max:45',
                 'phone' => 'required|max:15',
                 'email' => 'required|max:320',
                 'bussines' => 'max:45',

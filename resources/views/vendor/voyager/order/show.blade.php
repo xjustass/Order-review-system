@@ -7,8 +7,7 @@
 
     <div class="side-body padding-top" data-select2-id="14">
         <h1 class="page-title">
-            <i class="voyager-person"></i>
-            Užsakymas Nr. {{$order->id}}
+            <i class="voyager-person"></i> Užsakymas Nr. {{$order->id}}
         </h1>
 
         <div id="voyager-notifications"></div>
@@ -44,7 +43,7 @@
                             </div>
                         </div>
 
-                            @if($order->company_name != null)
+                        @if($order->company_name != null)
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="h5">Įmonės pavadinimas:</p>
@@ -52,7 +51,7 @@
                                 </div>
 
                             </div>
-                            @endif
+                        @endif
 
                         @if($order->additional_info != null)
                             <div class="row">
@@ -65,9 +64,7 @@
                         @endif
 
 
-
                     </div>
-
 
 
                     <div class="col-lg-6">
@@ -100,15 +97,15 @@
                                     @switch($order->status)
 
                                         @case(0)
-                                            Priimtas
-                                            @break
+                                        Priimtas
+                                        @break
 
                                         @case(1)
-                                           Vykdomas
-                                            @break
+                                        Vykdomas
+                                        @break
 
                                         @case(2)
-                                            Užbaigtas
+                                        Užbaigtas
                                         @break
 
                                     @endswitch
@@ -118,12 +115,11 @@
                         </div>
 
 
-
                         <div class="row">
 
                             <div class="col-sm-4">
-                            <p class="h5">Užsakymas pradėtas:</p>
-                            <p class="font-weight-bold h4"> {{$order->created_at}}</p>
+                                <p class="h5">Užsakymas pradėtas:</p>
+                                <p class="font-weight-bold h4"> {{$order->created_at}}</p>
                             </div>
 
                             <div class="col-sm-4">
@@ -133,30 +129,30 @@
 
                         </div>
 
-                    <div class="row">
+                        <div class="row">
 
-                        @if($order->work_performed != null)
-                        <div class="col-sm-4" >
-                            <p class="h5">Atlikti darbai:</p>
-                            <p class="font-weight-bold h4"> {{$order->work_performed }} </p>
-                        </div>
-                        @endif
+                            @if($order->work_performed != null)
+                                <div class="col-sm-4">
+                                    <p class="h5">Atlikti darbai:</p>
+                                    <p class="font-weight-bold h4"> {{$order->work_performed }} </p>
+                                </div>
+                            @endif
 
-                        @if($order->notes_for_clioent != null)
-                        <div class="col-sm-4">
-                            <p class="h5">Pastabos klientui:</p>
-                            <p class="font-weight-bold h4"> {{$order->notes_for_client}}</p>
+                            @if($order->notes_for_clioent != null)
+                                <div class="col-sm-4">
+                                    <p class="h5">Pastabos klientui:</p>
+                                    <p class="font-weight-bold h4"> {{$order->notes_for_client}}</p>
+                                </div>
+                            @endif
                         </div>
-                        @endif
-                </div>
 
                         @if($order->price != null)
-                        <div class="row">
-                            <div class="col-sm-4" >
-                                <p class="h5">Kaina:</p>
-                                <p class="font-weight-bold h4"> {{$order->price}} EUR</p>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p class="h5">Kaina:</p>
+                                    <p class="font-weight-bold h4"> {{$order->price}} EUR</p>
+                                </div>
                             </div>
-                        </div>
                         @endif
 
 
@@ -164,9 +160,14 @@
 
                 </div>
 
+
+                <a href="{{route('generate-pdf', $order)}}" title="Generuoti PDF" class="btn btn-sm btn-primary edit"> <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm">Generuoti PDF</span> </a>
+
+
+            </div>
         </div>
 
-        </div>
+
     </div>
 
 

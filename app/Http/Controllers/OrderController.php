@@ -47,7 +47,6 @@ class OrderController extends Controller
     {
         //Unique code for orders
 
-
         $code= $this->generateCode();
 
         while($this->codeExists($code)){
@@ -57,8 +56,8 @@ class OrderController extends Controller
 
         $order = new Order();
         $order->order_review_code =$code;
-        $order->first_name = $request->name;
-        $order->last_name = $request->last_name;
+        $order->first_name = $request->fname;
+        $order->last_name = $request->lname;
         $order->phone_number = $request->phone;
         $order->email = $request->email;
         $order->company_name = $request->bussines;
@@ -102,9 +101,8 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-
-        $order->first_name = $request->name;
-        $order->last_name = $request->last_name;
+        $order->first_name = $request->fname;
+        $order->last_name = $request->lname;
         $order->phone_number = $request->phone;
         $order->email = $request->email;
         $order->company_name = $request->bussines;

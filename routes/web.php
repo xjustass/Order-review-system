@@ -45,12 +45,12 @@ Route::get('/paslaugos', function () {
 
 
 
-
 Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('orders', OrderController::class)->middleware('admin.user');
 
-    Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->middleware('admin.user');
+    Route::get('generate-pdf/{order}', [PDFController::class, 'generatePDF'])->name('generate-pdf') ->middleware('admin.user');
+
     Voyager::routes();
 
 

@@ -71,26 +71,24 @@
         <div class="page-content container-fluid">
 
 
-            <form class="edit-add" method="post" action="  {{route('orders.store')}}   ">
+            <form class="edit-add" method="post" action="{{route('orders.store')}}">
 
                 @csrf
-
-
-                @error('name')
+                @error('fname')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="FormControlInput1">Vardas</label>
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="FormControlInput1" placeholder="Jonas" required>
+                    <input type="text" name="fname" class="form-control" value="{{ old('fname') }}" id="FormControlInput1" placeholder="Jonas" required>
 
                 </div>
 
-                @error('last_name')
+                @error('lname')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="FormControlInput2">Pavardė</label>
-                    <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}" id="FormControlInput2" placeholder="Jonaitis"required>
+                    <input type="text" name="lname" class="form-control" value="{{ old('lname') }}" id="FormControlInput2" placeholder="Jonaitis"required>
                 </div>
 
                 <div class="form-group">

@@ -30,21 +30,21 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        @error('name')
+                        @error('fname')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="form-group">
                             <label for="FormControlInput1">Vardas</label>
-                            <input type="text" name="name" class="form-control" id="FormControlInput1" value="{{$order->first_name}}" placeholder="Jonas" required>
+                            <input type="text" name="fname" class="form-control" id="FormControlInput1" value="{{$order->first_name}}" placeholder="Jonas" required>
                         </div>
 
 
-                        @error('last_name')
+                        @error('lname')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="form-group">
                             <label for="FormControlInput2">Pavardė</label>
-                            <input type="text" name="last_name" class="form-control" id="FormControlInput2" value="{{$order->last_name}}" placeholder="Jonaitis" required>
+                            <input type="text" name="lname" class="form-control" id="FormControlInput2" value="{{$order->last_name}}" placeholder="Jonaitis" required>
                         </div>
 
                         @error('phone')
