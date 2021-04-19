@@ -24,7 +24,7 @@ Route::get('/uzsakymo_paieska', function () {
 });
 
 
-Route::view('/uzsakymas', 'layouts.about_order', ['name' => 'Taylor']);
+Route::view('/uzsakymas', 'layouts.about_order');
 
 
 Route::get('/kainos', function () {
@@ -43,7 +43,7 @@ Route::get('/paslaugos', function () {
     return view('layouts.services');
 });
 
-
+Route::get('/search', 'App\Http\Controllers\ViewOrderStatusController@search')->name('search');
 
 Route::group(['prefix' => 'admin'], function () {
 

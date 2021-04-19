@@ -124,7 +124,7 @@
 
 <p class="line"><i> Apie užsakymo eigą informuosime el. paštu. Tai pat, suvedus žemiau pateiktą unikalų kodą į Batteries.lt internetinę svetainę, užsakymo eigą galite pasitikrinti savrankiškai. </i></p>
 
-<h2>Unikalus kodas, užsakymo patikrinimui:</h2>
+<h2>Unikalus kodas užsakymo patikrinimui:</h2>
 <h1 class="cyan">{{ $code }} </h1>
 
 

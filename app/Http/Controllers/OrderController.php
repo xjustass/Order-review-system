@@ -101,6 +101,7 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
+
         $order->first_name = $request->fname;
         $order->last_name = $request->lname;
         $order->phone_number = $request->phone;
@@ -108,14 +109,12 @@ class OrderController extends Controller
         $order->company_name = $request->bussines;
         $order->service = $request->product;
         $order->additional_info = $request->additional_info;
-
         $order->status = $request->status;
         $order->price = $request->price;
         $order->work_performed = $request->work_performed;
         $order->notes_for_client = $request->notes_for_client;
+        $order->findable = $this->changeOrderIsFindible($order->status);
         $order->save();
-
-
 
         return redirect()->route('orders.index')
             ->with('success', 'Užsakymas atnaujintas sėkmingai');
@@ -145,5 +144,28 @@ class OrderController extends Controller
     function codeExists($code){
 
         return Order::where('order_review_code', $code) ->exists();
+    }
+
+    function changeOrderIsFindible( $status) {
+
+        $findable = 0;
+
+        switch ($status) {
+            case 0:
+                $findable = 1;
+                break;
+            case 1:
+                $findable = 1;
+                break;
+            case 2:
+                $findable = 1;
+                break;
+
+            case 3:
+                $findable = 0;
+                break;
+        }
+        return $findable;
+
     }
 }

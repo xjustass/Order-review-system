@@ -128,7 +128,8 @@
                             <select class="bg-danger form-control" name="status" id="sel1">
                                 <option value="0"   {{ $order->status == 0 ? 'selected' : '' }} >Priimtas</option>
                                 <option value="1"{{ $order->status == 1 ? 'selected' : '' }}>Vykdomas</option>
-                                <option value="2"{{ $order->status == 2 ? 'selected' : '' }}>Užbaigtas</option>
+                                <option value="2"{{ $order->status == 2 ? 'selected' : '' }}>Laukiama atsiėmimo</option>
+                                <option value="3"{{ $order->status == 3 ? 'selected' : '' }}> Užbaigtas</option>
                             </select>
                         </div>
 

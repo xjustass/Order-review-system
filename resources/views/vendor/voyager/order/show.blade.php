@@ -105,6 +105,10 @@
                                         @break
 
                                         @case(2)
+                                        Laukiama atsiėmimo
+                                        @break
+
+                                        @case(3)
                                         Užbaigtas
                                         @break
 
