@@ -3,7 +3,6 @@
 
 @section('page_header')
 
-
     <div class="container-fluid">
         <h1 class="page-title">
             <i class="voyager-book"></i> Užsakymai
@@ -22,11 +21,11 @@
         @endif
 
 
-            <script>
+            <script type="text/javascript">
 
-                setTimeout(function() {
-                    $('.alert').fadeOut('slow');
-                }, 5000);
+                $(document).ready(function(){
+                    $("#msgid").html("This is Hello World by JQuery");
+                });
 
             </script>
 
@@ -46,6 +45,7 @@
                         <div id="dataTable_filter" class="dataTables_filter"><label>Paieška:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTable"></label></div>
                     </div>
                 </div>
+
 
                 <div class="row">
                     <div class="col-sm-12">
@@ -73,6 +73,10 @@
                             </thead>
 
                             <tbody>
+
+                            <p id="msgid">
+
+                            </p>
 
                             @foreach( $orders  as $order)
 
@@ -151,5 +155,13 @@
 @section('content')
 
 
+
+@endsection
+
+@section('javascript')
+
+    <!-- DataTables -->
+
+    <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
 
 @endsection

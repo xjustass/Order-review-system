@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\URL;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Mail\OrderRegistered;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -65,6 +69,11 @@ class OrderController extends Controller
         $order->additional_info = $request->additional_info;
         $order->created_by = Auth::id();
         $order->save();
+
+        route('search', ['post' => 1]);
+
+         $url = URL::to('/search?search='.$order->order_review_code);
+        Mail::to($order->email)->send(new OrderRegistered($url));
 
         return redirect()->route('orders.index') ->with('success', 'Užsakymas sukurtas sėkmingai');
 
@@ -168,4 +177,7 @@ class OrderController extends Controller
         return $findable;
 
     }
+
+
+
 }
