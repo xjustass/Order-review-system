@@ -47,11 +47,21 @@ Route::get('/search', 'App\Http\Controllers\ViewOrderStatusController@search')->
 
 Route::group(['prefix' => 'admin'], function () {
 
+    //Orders
     Route::resource('orders', OrderController::class)->middleware('admin.user');
 
+    //PDF GENERATE
     Route::get('generate-pdf/{order}', [PDFController::class, 'generatePDF'])->name('generate-pdf') ->middleware('admin.user');
 
+    //Order serach order in list
+    Route::get('/search','App\Http\Controllers\OrderController@search')->name('orders.search')->middleware('admin.user');
+
+    //Text components
+    Route::get('text_components','App\Http\Controllers\TextElementController@edit')->name('text.edit')->middleware('admin.user');
+    Route::put('text_components/update','App\Http\Controllers\TextElementController@update')->name('text.update')->middleware('admin.user');
     Voyager::routes();
+
+
 
 
 });

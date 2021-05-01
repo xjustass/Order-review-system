@@ -178,23 +178,60 @@ class OrderController extends Controller
 
     }
 
-    public function search(Request $request){
+    public function getOrders(Request $request)
+    {
+        ## Read value
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // Rows display per page
+
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+
+        // Total records
+        $totalRecords = Order::select('count(*) as allcount')->count();
+        $totalRecordswithFilter = Order::select('count(*) as allcount')->where('name', 'like', '%' . $searchValue . '%')->count();
+
+        // Fetch records
+        $records = Order::orderBy($columnName, $columnSortOrder)
+            ->where('orders.first_name', 'like', '%' . $searchValue . '%')
+            ->select('orders.*')
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();
+
+        $data_arr = array();
+
+        foreach ($records as $record) {
+            $id = $record->id;
+            $name = $record->first_name;
+            $last_name = $record->last_name;
+
+            $data_arr[] = array(
+                "id" => $id,
+                "name" => $name,
+                "last_name" => $last_name
+            );
+        }
+
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr
+        );
+
+        echo json_encode($response);
+        exit;
 
 
-
-        $search = $request->input('search');
-
-        $orders = Order::query()
-            ->where('id', 'LIKE', "%{$search}%")
-            ->orWhere('first_name', 'LIKE', "%{$search}%")
-            ->orWhere('last_name', 'LIKE', "%{$search}%")
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
-
-
-        // Return the search view with the resluts compacted
-
-        return view('vendor.voyager.order.browse', ['orders' => $orders]);
     }
 
 }

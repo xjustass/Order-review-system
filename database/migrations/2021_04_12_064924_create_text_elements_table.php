@@ -15,10 +15,12 @@ class CreateTextElementsTable extends Migration
     {
         Schema::create('text_elements', function (Blueprint $table) {
             $table->id();
+            $table->string('name',100);
             $table->string('text',500);
-            $table->integer('edited_by');
+            $table->integer('edited_by')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**

@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="voyager-book"></i> Užsakymai
+            <i class="voyager-book"></i> Teksto komponentai
         </h1>
     </div>
 
@@ -15,7 +15,7 @@
 
 
         @if(session()->has('success'))
-            <div class="alert alert-success"  x-data="{ show: true }" x-show.transition.opacity.out.duration.1500ms="show" x-init="setTimeout(() => show = false, 3000)">
+            <div class="alert alert-success">
                 {{ session()->get('success') }}
             </div>
         @endif
@@ -23,25 +23,10 @@
 
         <div class="table-responsive">
             <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                <div class="row">
-
-
-                    <div class="col-xl-6">
-                        <div id="dataTable_filter" class="dataTables_filter">
-
-                            <form action="{{ route('orders.search') }}" method="GET">
-
-                            <label>Paieška:
-                                <input type="search" name="search" class="form-control input-sm" placeholder=""></label>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
 
                 <div class="row">
                     <div class="col-sm-12">
+
                         <table id="dataTable" class="table table-hover dataTable no-footer" role="grid" aria-describedby="dataTable_info">
                             <thead>
                             <tr>
@@ -157,7 +142,6 @@
 
 @section('javascript')
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
 
 @endsection
