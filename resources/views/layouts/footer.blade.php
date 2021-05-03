@@ -6,14 +6,14 @@
                     <a class="flex items-center md:justify-start justify-center text-gray-900">
                         <img src="{{asset('images/logo1.svg')}}">
                     </a>
-                    <p class="mt-2 text-sm text-gray-500 pb-2">Baterijų restauravimas, akumuliatorių gamyba ir atnaujinimas</p>
+                    <p class="mt-2 text-sm text-gray-500 pb-2">{{$text_elements[7]->text}}</p>
 
-                    <p class="mt-2 text-sm text-gray-300">UAB „Tomita“ </p>
-                    <p class="mt-2 text-sm text-gray-300  ">  Jonavos g. 104, Kaunas</p>
+                    <p class="mt-2 text-sm text-gray-300">{{$text_elements[0]->text}} </p>
+                    <p class="mt-2 text-sm text-gray-300  ">{{$text_elements[2]->text}}</p>
 
-                    <p class="mt-2 text-sm text-gray-300 ">  Tel. (8-37) 32 32 02</p>
-                    <p class="mt-2 text-sm text-gray-300 ">  Mob.tel. +370 618 23 443</p>
-                    <p class="mt-2 text-sm text-gray-300 ">  El.paštas gamyba@tomita.lt</p>
+                    <p class="mt-2 text-sm text-gray-300 ">  Tel. {{$text_elements[3]->text}}</p>
+                    <p class="mt-2 text-sm text-gray-300 ">  Mob.tel.{{$text_elements[4]->text}}</p>
+                    <p class="mt-2 text-sm text-gray-300 ">  El.paštas {{$text_elements[5]->text}}</p>
 
 
 
@@ -56,8 +56,10 @@
             </div>
         </div>
 
+        @php
+        dd($text_elements);
+        @endphp
     </div>
-
     <div class="bg-gray-800">
         <div class="container mx-auto py-4 px-5 ">
             <p class="text-gray-100 text-sm text-center">© {{ now()->year }} Batteries

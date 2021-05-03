@@ -12,11 +12,11 @@
 
                 <div class="h-full w-full flex-col text-left">
 
-                    <p class="text-xl mb-5 mr-12"><b> Batteries.lt </b> priklausantis UAB „Tomita“ yra informacinio tipo svetainė skirta informuoti žmones apie visų tipų akumuliatorius, jų naudojimą, priežiūrą ir naujoves. </p>
+                    <p class="text-xl mb-5 mr-12">{!! $text_elements[1]->text!!} </p>
 
                     <p class="text-xl leading-9">
 
-                        UAB „Tomita“ <br/> <b>Adresas:</b> Jonavos g. 104, LT-44138, Kaunas<br/> <b>Tel.</b> (8-37) 32 32 02<br/> <b> Mob.tel.</b> <a class="text-blue-700 font-semibold" href="tel:37061823443">+370 618 23 443 </a> <br/> <b> El.paštas</b> <a class="text-blue-700 font-semibold" href="mailto:gamyba@tomita.lt">gamyba@tomita.lt</a>
+                        {{$text_elements[0]->text}} <br/> <b>Adresas:</b>  {{$text_elements[2]->text}}<br/> <b>Tel.</b> {{$text_elements[3]->text}}<br/> <b> Mob.tel.</b> <a class="text-blue-700 font-semibold" href="tel:{{$text_elements[4]->text}}">{{$text_elements[4]->text}} </a> <br/> <b> El.paštas</b> <a class="text-blue-700 font-semibold" href="mailto:{{$text_elements[5]->text}}">{{$text_elements[5]->text}}</a>
 
                         <br/>
 
@@ -27,28 +27,21 @@
                         <b> Darbo laikas:</b></p>
                     <img class="h-4 w-auto" src="{{asset('images/workdays.png')}}">
 
-                    <p class="text-xl leading-9 mb-10"> 08:30-17:00 </p>
+                    <p class="text-xl leading-9 mb-10"> {{$text_elements[6]->text}} </p>
 
 
-                    <!-- component -->
-                    <form class="w-full max-w-lg">
-                        <p class="text-xl leading-9">
+                    <form class="w-full max-w-lg" method="post" action="{{url('/susisiekti')}}">
+                        @csrf
+                        <p class="text-2xl font-bold leading-9 mb-2">
                             Susisiekite
-
                         </p>
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-first-name">
                                     Vardas
                                 </label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Vardenis">
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name="name" placeholder="Vardenis" required>
                                 <p class="text-red-500 text-xs italic"></p>
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
-                                <label class="block tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-last-name">
-                                    Pavardė
-                                </label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Pavardenis">
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-6">
@@ -56,7 +49,7 @@
                                 <label class="block  tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-password">
                                     El. paštas
                                 </label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email">
+                                <input placeholder="vardenis@paštas.lt" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" required>
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-6">
@@ -64,13 +57,13 @@
                                 <label class="block tracking-wide text-gray-700 text-sm font-bold mb-2" for="grid-password">
                                     Pranešimas
                                 </label>
-                                <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+                                <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message" name="content" required></textarea>
                             </div>
                         </div>
 
                         <div class="md:flex md:items-center pb-10">
                             <div class="md:w-1/3">
-                                <button class="focus:shadow-outline bg-electric focus:outline-none text-black font-bold py-2 px-4 rounded" type="button">
+                                <button class="focus:shadow-outline bg-electric focus:outline-none text-black font-bold py-2 px-4 rounded" type="submit">
                                     Siųsti
                                 </button>
                             </div>

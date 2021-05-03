@@ -34,6 +34,9 @@
 
                         @foreach($text as $t)
 
+                            @error(strval('form'.$t->id))
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         <div class="form-group">
                             <label>{{$t->name}}</label>
 

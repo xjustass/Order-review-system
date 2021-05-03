@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PDFController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ Route::get('/uzsakymo_paieska', function () {
 
 Route::view('/uzsakymas', 'layouts.about_order');
 
-
 Route::get('/kainos', function () {
     return view('layouts.prices');
 });
@@ -34,6 +34,23 @@ Route::get('/kainos', function () {
 Route::get('/kontaktai', function () {
     return view('layouts.contact');
 });
+
+Route::post('/susisiekti', function (Request $request) {
+
+    $request = $request->validate([
+        'name' => 'required|max:30',
+        'email' => 'required|max:',
+        'content' => 'required|max:500',
+
+
+    ]);
+
+Mail::send(new \App\Mail\ContactMail($request));
+
+return redirect('/');
+});
+
+
 
 Route::get('/akumuliatoriai', function () {
     return view('layouts.batteries');
