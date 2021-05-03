@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\OrderCompleted;
 use Illuminate\Support\Facades\URL;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
@@ -72,7 +73,7 @@ class OrderController extends Controller
 
         route('search', ['post' => 1]);
 
-         $url = URL::to('/search?search='.$order->order_review_code);
+        $url = URL::to('/search?search='.$order->order_review_code);
         Mail::to($order->email)->send(new OrderRegistered($url));
 
         return redirect()->route('orders.index') ->with('success', 'Užsakymas sukurtas sėkmingai');
@@ -110,6 +111,13 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
+        if ($order->status != 2){
+            if ($request->status==2){
+                $url = URL::to('/search?search='.$order->order_review_code);
+                Mail::to($order->email)->send(new OrderCompleted($url));
+            }
+
+        }
 
         $order->first_name = $request->fname;
         $order->last_name = $request->lname;

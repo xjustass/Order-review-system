@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class OrderCompleted extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $url;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $url)
     {
-        //
+        $this->url = $url;
     }
 
     /**
@@ -28,6 +28,6 @@ class OrderCompleted extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.orders.completed')->subject('Užsakymas įvykdytas');;
+        return $this->markdown('emails.orders.completed')->subject('Užsakymas įvykdytas');
     }
 }

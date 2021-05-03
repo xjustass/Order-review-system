@@ -136,7 +136,7 @@
                 @enderror
                 <div class="form-group">
                     <label for="FormControlInput7">Pastabos</label>
-                    <textarea class="form-control" name="additional_info" value="{{ old('additional_info') }}" id="FormControlInput7" rows="3"></textarea>
+                    <textarea class="form-control" name="additional_info" id="FormControlInput7" rows="3">{{ old('additional_info') }}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">

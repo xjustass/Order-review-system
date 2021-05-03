@@ -37,9 +37,9 @@ Route::get('/kontaktai', function () {
 
 Route::post('/susisiekti', function (Request $request) {
 
-    $request = $request->validate([
+    $data = $request->validate([
         'name' => 'required|max:30',
-        'email' => 'required|max:',
+        'email' => 'required|max:140',
         'content' => 'required|max:500',
 
 

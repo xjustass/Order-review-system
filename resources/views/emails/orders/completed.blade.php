@@ -1,12 +1,18 @@
 @component('mail::message')
-# Introduction
+# Užsakymas įvykdytas
 
-The body of your message.
+Sveiki,
 
-@component('mail::button', ['url' => ''])
-Button Text
+Jūsų užsakymas yra įvykdytas. Kviečiame atsiimti užsakymų atsiėmimo vietoje.
+
+<b>Adresas:</b> Jonavos g. 104, Kaunas<br>
+<b>Darbo laikas:</b> pirmadienis - penktadienis 8:30 - 17:00
+
+Daugiau informacijos apie užsakymą pateiktą čia:
+@component('mail::button', ['url' => $url])
+    Peržiūrėti užsakymą
 @endcomponent
 
-Thanks,<br>
+Pagarbiai<br>
 {{ config('app.name') }}
 @endcomponent

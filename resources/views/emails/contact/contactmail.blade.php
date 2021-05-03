@@ -1,6 +1,13 @@
+Siuntėjas: {{ $email->name }}, {{ $email->email }}
+
+<p>
+    {{ $email->content }}
+</p>
 
 
-{{ $email->content }}
+
+
+
 
 
 
