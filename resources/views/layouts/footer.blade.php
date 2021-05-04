@@ -55,10 +55,6 @@
                 </div>
             </div>
         </div>
-
-        @php
-        dd($text_elements);
-        @endphp
     </div>
     <div class="bg-gray-800">
         <div class="container mx-auto py-4 px-5 ">

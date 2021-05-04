@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ServicePrice;
 use Illuminate\Http\Request;
 
 class PriceController extends Controller
@@ -13,17 +14,20 @@ class PriceController extends Controller
      */
     public function index()
     {
-        //
+
+        $services = ServicePrice::all();
+
+
+        return view('vendor.voyager.text.prices.browse',  ['services' => $services]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+
+
+
+        return view('vendor.voyager.text.prices.create');
     }
 
     /**
@@ -34,42 +38,49 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'service_name' => 'required|max:255',
+            'price' => 'required|numeric',
+        ]);
+
+        $service = new ServicePrice();
+        $service->service_name = $request->service_name;
+        $service->price =$request->price;
+        $service->save();
+
+        return redirect()->route('prices.index') ->with('success', 'Kaina pridėta sėkmingai');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+
+    public function edit(ServicePrice $price)
     {
-        //
+
+
+        return view('vendor.voyager.text.prices.edit', compact('price'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request,  $id)
     {
-        //
+
+        $service=ServicePrice::find($id);
+
+        $request->validate([
+            'service_name' => 'required|max:255',
+            'price' => 'required|numeric',
+        ]);
+
+
+        $service->service_name =$request->service_name;
+        $service->price= $request->price;
+        $service->save();
+
+        return redirect()->route('prices.index')
+            ->with('success', 'Kaina atnaujinta sėkmingai');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -79,6 +90,10 @@ class PriceController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $service = ServicePrice::find($id);
+        $service->delete();
+
+        return redirect()->back();
     }
 }

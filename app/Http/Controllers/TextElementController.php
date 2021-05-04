@@ -31,9 +31,6 @@ class TextElementController extends Controller
             'form7' => 'required|max:500',
             'form8' => 'required|max:500',
             'form9' => 'required|max:500',
-
-
-
         ]);
 
         DB::table('text_elements')->upsert([

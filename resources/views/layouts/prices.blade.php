@@ -20,25 +20,14 @@
                 </tr>
 
 
-                <tr class="bg-gray-100 text-left border-b border-gray-200">
-                    <td class="px-4 py-3 w-9/12">Akumuliatoriaus testavimas</td>
-                    <td class="pl-4 py-3 w-3/12">10</td>
-                </tr>
+                @foreach($prices as $price)
 
-                <tr class="bg-gray-100 text-left border-b border-gray-200">
-                    <td class="px-4 py-3 w-9/12">Akumuliatoriaus restauravimas</td>
-                    <td class="pl-4 py-3 w-3/12">25</td>
-                </tr>
+                    <tr class="bg-gray-100 text-left border-b border-gray-200">
+                        <td class="px-4 py-3 w-9/12">{{$price->service_name}}</td>
+                        <td class="pl-4 py-3 w-3/12">{{$price->price}}</td>
+                    </tr>
+                @endforeach
 
-                <tr class="bg-gray-100 text-left border-b border-gray-200">
-                    <td class="px-4 py-3 w-9/12">Baterijų litavimas (1 vnt.)</td>
-                    <td class="pl-4 py-3 w-3/12">5</td>
-                </tr>
-
-                <tr class="bg-gray-100 text-left border-b border-gray-200">
-                    <td class="px-4 py-3 w-9/12">Akumuliatoriaus restauravimas</td>
-                    <td class="pl-4 py-3 w-3/12">30</td>
-                </tr>
 
             </table>
 </div>

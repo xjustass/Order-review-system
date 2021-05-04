@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PriceController;
 use Illuminate\Http\Request;
+use  App\Models\ServicePrice;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +20,25 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('layouts.home');
+
+    $posts=\TCG\Voyager\Models\Post::latest()->take(2)->get();
+
+    return view('layouts.home', ['posts' => $posts]);
 });
 
 Route::get('/uzsakymo_paieska', function () {
     return view('layouts.search');
 });
 
-
 Route::view('/uzsakymas', 'layouts.about_order');
 
+
 Route::get('/kainos', function () {
-    return view('layouts.prices');
+     $prices= ServicePrice::all();
+
+    return view('layouts.prices', ['prices' => $prices]);
 });
+
 
 Route::get('/kontaktai', function () {
     return view('layouts.contact');
@@ -41,15 +50,10 @@ Route::post('/susisiekti', function (Request $request) {
         'name' => 'required|max:30',
         'email' => 'required|max:140',
         'content' => 'required|max:500',
-
-
     ]);
-
 Mail::send(new \App\Mail\ContactMail($request));
-
 return redirect('/');
 });
-
 
 
 Route::get('/akumuliatoriai', function () {
@@ -62,6 +66,9 @@ Route::get('/paslaugos', function () {
 
 Route::get('/search', 'App\Http\Controllers\ViewOrderStatusController@search')->name('search');
 
+
+Route::get('strapsniai/{id}', 'App\Http\Controllers\FrontController@show')->name('post.view');
+
 Route::group(['prefix' => 'admin'], function () {
 
     //Orders
@@ -69,6 +76,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     //PDF GENERATE
     Route::get('generate-pdf/{order}', [PDFController::class, 'generatePDF'])->name('generate-pdf') ->middleware('admin.user');
+
+    Route::resource('prices', PriceController::class)->middleware('admin.user');
 
     //Order serach order in list
     Route::get('/search','App\Http\Controllers\OrderController@search')->name('orders.search')->middleware('admin.user');
