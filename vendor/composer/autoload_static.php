@@ -6507,6 +6507,7 @@ class ComposerStaticInitfb9758a37d2b9dd8512f2b40b6db293e
         'TCG\\Voyager\\Widgets\\UserDimmer' => __DIR__ . '/..' . '/tcg/voyager/src/Widgets/UserDimmer.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\OrdersTest' => __DIR__ . '/../..' . '/tests/Feature/OrdersTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',

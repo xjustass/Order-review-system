@@ -47,6 +47,11 @@
             min-height: 100%;
         }
 
+        .border-red{
+
+            border: 2px solid #e74c3c;
+        }
+
         .is-invalid{
             border: 2px solid red;
         }
@@ -80,74 +85,70 @@
             <form class="edit-add" method="post" action="{{route('orders.store')}}">
 
                 @csrf
+
+                <div class="form-group">
+                    <label class="required" for="FormControlInput1">Vardas</label>
+                    <input type="text" name="fname" class="form-control @error('fname')border-red @enderror" value="{{ old('fname') }}" id="FormControlInput1" placeholder="Jonas" required>
+                </div>
                 @error('fname')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+
                 <div class="form-group">
-                    <label class="required" for="FormControlInput1">Vardas</label>
-                    <input type="text" name="fname" class="form-control" value="{{ old('fname') }}" id="FormControlInput1" placeholder="Jonas" required>
-
+                    <label class="required" for="FormControlInput2">Pavardė</label>
+                    <input type="text" name="lname" class="form-control @error('lname')border-red @enderror" value="{{ old('lname') }}" id="FormControlInput2" placeholder="Jonaitis"required>
                 </div>
-
                 @error('lname')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <div class="form-group">
-                    <label class="required" for="FormControlInput2">Pavardė</label>
-                    <input type="text" name="lname" class="form-control" value="{{ old('lname') }}" id="FormControlInput2" placeholder="Jonaitis"required>
-                </div>
 
                 <div class="form-group">
 
-
-                    @error('phone')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                     <label class="required" for="FormControlInput3">Tel. nr.</label>
-                    <input type="tel" name="phone" class="form-control " value="{{ old('phone') }}" id="FormControlInput1" placeholder="+3706123456" required>
-
-
+                    <input type="tel" name="phone" class="form-control @error('phone')border-red @enderror " value="{{ old('phone') }}" id="FormControlInput1" placeholder="+3706123456" required>
                 </div>
+                @error('phone')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
+                <div class="form-group">
+                    <label class="required" for="FormControlInput4">El. paštas</label>
+                    <input type="email" name="email" class="form-control @error('email')border-red @enderror" value="{{ old('email') }}" id="FormControlInput4" placeholder="vardas@paštas.lt" required>
+                </div>
                 @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+
+
+
                 <div class="form-group">
-                    <label class="required" for="exampleFormControlInput4">El. paštas</label>
-                    <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="FormControlInput4" placeholder="vardas@paštas.lt" required>
+                    <label class="required" for="FormControlInput6">Remontuojams daiktas/gaminys</label>
+                    <input type="text" name="product" class="form-control @error('product')border-red @enderror " value="{{ old('product') }}" id="FormControlInput6" required>
                 </div>
-
-
                 @error('product')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <div class="form-group">
-                    <label class="required" for="FormControlInput6">Remontuojams daiktas/gaminys</label>
-                    <input type="text" name="product" class="form-control " value="{{ old('product') }}" id="FormControlInput6" required>
-                </div>
 
+                <div class="form-group">
+                    <label for="FormControlInput5">Įmonės pavadinimas</label>
+                    <input type="text" name="bussines" class="form-control @error('bussines')border-red @enderror" id="FormControlInput5" value="{{ old('bussines') }}" placeholder="UAB">
+                </div>
                 @error('bussines')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <div class="form-group">
-                    <label for="FormControlInput5">Įmonės pavadinimas</label>
-                    <input type="text" name="bussines" class="form-control" id="FormControlInput5" value="{{ old('bussines') }}" placeholder="UAB">
-                </div>
 
 
 
-
-
-
-                @error('product')
-                <div  class="alert alert-danger">{{ $message }}</div>
-                @enderror
                 <div class="form-group">
                     <label for="FormControlInput7">Pastabos</label>
-                    <textarea class="form-control" name="additional_info" id="FormControlInput7" rows="3">{{ old('additional_info') }}</textarea>
+                    <textarea name="additional_info" class="form-control @error('additional_info')border-red @enderror"  id="FormControlInput7" rows="3">{{ old('additional_info') }}</textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">
+                @error('additional_info')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <button type="submit" value="register" class="btn btn-primary">
                     <i class="icon wb-plus-circle"></i> Registruoti</button>
 
 

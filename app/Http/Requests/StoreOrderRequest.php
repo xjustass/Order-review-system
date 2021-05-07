@@ -27,7 +27,7 @@ class StoreOrderRequest extends FormRequest
         return [
             'fname' => 'required|max:45',
             'lname' => 'required|max:45',
-            'phone' => 'required|max:15',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:6',
             'email' => 'required|max:320',
             'bussines' => 'max:45',
             'product' => 'required|max:45',

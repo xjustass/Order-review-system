@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class TextElementController extends VoyagerController
+class TextElementController extends Controller
 {
 
 
     public function index()
     {
+
 
         $text = DB::table('text_elements')->get();
 

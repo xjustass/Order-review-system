@@ -26,13 +26,13 @@ class UpdateOrderRequest extends FormRequest
         return [
                 'fname' => 'required|max:45',
                 'lname' => 'required|max:45',
-                'phone' => 'required|max:15',
+                'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:6',
                 'email' => 'required|max:320',
                 'bussines' => 'max:45',
                 'product' => 'required|max:80',
                 'additional_info' => 'max:150',
                 'status' => 'required|max:1',
-                'price' => 'max:10',
+                'price' => 'nullable|regex:/^(\d+(,\d{1,2})?)?$/',
                 'work_performed' => 'max:80',
                 'notes_for_client' => 'max:100',
         ];

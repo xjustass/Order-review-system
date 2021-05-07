@@ -9,7 +9,7 @@
                 <h2 class=" m-auto text-4xl sm:text-5xl  leading-tight font-extrabold tracking-tight text-gray-100 ">
                     <span class="iconify text-red-500 mx-auto text-9xl"  data-icon="gg:danger" data-inline="false"></span> Toks užsakymas neegzistuoja</h2>
             @else
-                <h2 class="mt-12 md:mt-28 text-4xl sm:text-5xl mb-12 md:mb-20 leading-tight font-extrabold tracking-tight text-gray-100 ">
+                <h2 class="mt-12 md:mt-28 text-4xl sm:text-5xl mb-12 md:mb-16 leading-tight font-extrabold tracking-tight text-gray-100 ">
                     Užsakymo duomenys</h2>
 
                 <div class="rounded-lg h-auto m-5 p-7 sm:w-5/6 mx-auto bg-gray-200 text-gray-800 shadow-2xl">
@@ -18,8 +18,10 @@
 
                         <div class="h-full w-full flex-col text-left">
                             <h2 class="text-2xl font-medium"> Užsakymo numeris:</h2>
-
                             <p class="mt-2 text-xl font-medium">{{$order->id}}</p>
+
+                            <h2 class="text-2xl mt-2 font-medium">Užsakymas:</h2>
+                            <p class="mt-2 text-xl font-medium">{{$order->service}}</p>
 
 
                             @if(isset($order->work_performed))
