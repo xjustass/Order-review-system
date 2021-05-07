@@ -66,9 +66,10 @@ Route::get('/paslaugos', function () {
 
 Route::get('/search', 'App\Http\Controllers\ViewOrderStatusController@search')->name('search');
 
-
 Route::get('strapsniai/{id}', 'App\Http\Controllers\FrontController@show')->name('post.view');
 
+
+//Admin
 Route::group(['prefix' => 'admin'], function () {
 
     //Orders
@@ -83,7 +84,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/search','App\Http\Controllers\OrderController@search')->name('orders.search')->middleware('admin.user');
 
     //Text components
-    Route::get('text_components','App\Http\Controllers\TextElementController@edit')->name('text.edit')->middleware('admin.user');
+    Route::get('text_components','App\Http\Controllers\TextElementController@index')->name('text.edit')->middleware('admin.user');
     Route::put('text_components/update','App\Http\Controllers\TextElementController@update')->name('text.update')->middleware('admin.user');
     Voyager::routes();
 

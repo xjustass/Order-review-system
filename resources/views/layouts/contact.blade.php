@@ -8,7 +8,7 @@
             <h2 class="mt-12 md:mt-28 text-4xl sm:text-5xl mb-12 md:mb-20 leading-tight font-extrabold tracking-tight text-gray-800 ">
                 Kontaktai </h2>
 
-            <div class="flex flex-col lg:flex-row ml-5">
+            <div class="flex flex-col xl:flex-row mx-5">
 
                 <div class="h-full w-full flex-col text-left">
 
@@ -75,8 +75,13 @@
                 </div>
 
                 <div class="h-full w-full flex-col text-left mt-7 sm:mt-0 mb-10">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1363.7594561972721!2d23.910487450614216!3d54.91062927284217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x37169aafb78278f0!2sTomita!5e0!3m2!1slt!2slt!4v1617109557016!5m2!1slt!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1617109341504!6m8!1m7!1s4CCVGt3AG466IzpuNhj-8A!2m2!1d54.91116922184521!2d23.90894622707328!3f121.4086625807899!4f-0.09364422788053162!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="google-maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1363.7594561972721!2d23.910487450614216!3d54.91062927284217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x37169aafb78278f0!2sTomita!5e0!3m2!1slt!2slt!4v1617109557016!5m2!1slt!2slt" class="max-w-screen" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                    </div>
+                    <div class="google-maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1617109341504!6m8!1m7!1s4CCVGt3AG466IzpuNhj-8A!2m2!1d54.91116922184521!2d23.90894622707328!3f121.4086625807899!4f-0.09364422788053162!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
 

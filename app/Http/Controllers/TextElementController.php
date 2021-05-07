@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class TextElementController extends Controller
+class TextElementController extends VoyagerController
 {
 
 
-    public function edit()
+    public function index()
     {
 
         $text = DB::table('text_elements')->get();

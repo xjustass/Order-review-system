@@ -111,6 +111,7 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
+        //Jeigu užsakymas laukia atsiėmimo:
         if ($order->status != 2){
             if ($request->status==2){
                 $url = URL::to('/search?search='.$order->order_review_code);
@@ -118,6 +119,16 @@ class OrderController extends Controller
             }
 
         }
+
+        //Jeigu užsakymas visiškai užbaigtas:
+        if ($order->status != 3){
+            if ($request->status==3){
+                $order->order_review_code=null;
+            }
+
+        }
+
+
 
         $order->first_name = $request->fname;
         $order->last_name = $request->lname;
@@ -200,7 +211,7 @@ class OrderController extends Controller
             ->paginate(20);
 
 
-        // Return the search view with the resluts compacted
+        // Return the search view with the results compacted
 
         return view('vendor.voyager.order.browse', ['orders' => $orders]);
     }

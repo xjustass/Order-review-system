@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('order_review_code',45)->unique();
+            $table->string('order_review_code',45)->unique()->nullable();
             $table->string('first_name',45);
             $table->string('last_name',45);
             $table->string('phone_number',15);

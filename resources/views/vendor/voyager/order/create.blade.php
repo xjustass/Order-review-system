@@ -51,6 +51,12 @@
             border: 2px solid red;
         }
 
+        form label.required:after
+        {
+            color: red;
+            content: " *";
+        }
+
     </style>
 @endsection
 
@@ -78,7 +84,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
-                    <label for="FormControlInput1">Vardas</label>
+                    <label class="required" for="FormControlInput1">Vardas</label>
                     <input type="text" name="fname" class="form-control" value="{{ old('fname') }}" id="FormControlInput1" placeholder="Jonas" required>
 
                 </div>
@@ -87,7 +93,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
-                    <label for="FormControlInput2">Pavardė</label>
+                    <label class="required" for="FormControlInput2">Pavardė</label>
                     <input type="text" name="lname" class="form-control" value="{{ old('lname') }}" id="FormControlInput2" placeholder="Jonaitis"required>
                 </div>
 
@@ -97,7 +103,7 @@
                     @error('phone')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    <label for="FormControlInput3">Tel. nr.</label>
+                    <label class="required" for="FormControlInput3">Tel. nr.</label>
                     <input type="tel" name="phone" class="form-control " value="{{ old('phone') }}" id="FormControlInput1" placeholder="+3706123456" required>
 
 
@@ -107,10 +113,18 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
-                    <label for="exampleFormControlInput4">El. paštas</label>
+                    <label class="required" for="exampleFormControlInput4">El. paštas</label>
                     <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="FormControlInput4" placeholder="vardas@paštas.lt" required>
                 </div>
 
+
+                @error('product')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                <div class="form-group">
+                    <label class="required" for="FormControlInput6">Remontuojams daiktas/gaminys</label>
+                    <input type="text" name="product" class="form-control " value="{{ old('product') }}" id="FormControlInput6" required>
+                </div>
 
                 @error('bussines')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -121,18 +135,12 @@
                 </div>
 
 
-                @error('product')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                <div class="form-group">
-                    <label for="FormControlInput6">Remontuojams daiktas/gaminys</label>
-                    <input type="text" name="product" class="form-control " value="{{ old('product') }}" id="FormControlInput6" required>
-                </div>
+
 
 
 
                 @error('product')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <div  class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="form-group">
                     <label for="FormControlInput7">Pastabos</label>

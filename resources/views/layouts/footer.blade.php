@@ -1,7 +1,7 @@
 <footer class="w-full font-body bg-primary">
     <div class="max-w-screen-xl mx-auto">
         <div class="text-gray-600 font-body">
-            <div class="px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="px-5 pt-20 pb-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                     <a class="flex items-center md:justify-start justify-center text-gray-900">
                         <img src="{{asset('images/logo1.svg')}}">
@@ -18,37 +18,31 @@
 
 
                 </div>
-                <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="flex-grow flex flex-wrap md:pl-20 -mb-5 mt-10 md:text-left text-center">
 
-                    <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <div class="lg:w-1/2 md:w-1/2 w-full px-20">
                         <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-3">Nuorodos</h2>
                         <nav class="list-none mb-10">
                             <li>
-                                <a class="text-gray-600 hover:text-electric">Baterijos</a>
+                                <a class="text-gray-600 hover:text-electric" href="{{url('/akumuliatoriai')}}">Baterijos</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-electric">Remontas</a>
+                                <a class="text-gray-600 hover:text-electric" href="{{url('/uzsakymo_paieska/')}}">Remonto darbų patikrinimas</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-electric">Kainos</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-electric">D. U. K.</a>
+                                <a class="text-gray-600 hover:text-electric" href="{{url('/kainos')}}">Kainos</a>
                             </li>
                         </nav>
                     </div>
 
-                    <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <div class="lg:w-1/2 md:w-1/2 w-full px-20">
                         <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-3">Svarbu</h2>
                         <nav class="list-none mb-10">
                             <li>
-                                <a class="text-gray-600 hover:text-electric">Apie įmonę</a>
+                                <a class="text-gray-600 hover:text-electric" href="{{url('/kontaktai')}}">Apie įmonę</a>
                             </li>
                             <li>
                                 <a class="text-gray-600 hover:text-electric">Privatumo politika</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-electric">Fourth Link</a>
                             </li>
                         </nav>
                     </div>

@@ -16,7 +16,6 @@ class PDFController extends Controller
     {
 
 
-
         $data = [
             'title' => 'Užsakymo registracijos pažyma',
             'date' => date('Y/m/d'),
@@ -30,7 +29,8 @@ class PDFController extends Controller
 
         ];
 
+
         $pdf = PDF::loadView('PDF/PDF', $data);
-        return $pdf->download('test.pdf');
+        return $pdf->download($order->id.' '. $order->first_name.'.pdf');
     }
 }
