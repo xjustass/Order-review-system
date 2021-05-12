@@ -23,7 +23,7 @@ class TextElementController extends Controller
     public function update(Request $request)
     {
 
-        $request = $request->validate([
+            $request->validate([
             'form1' => 'required|max:500',
             'form2' => 'required|max:500',
             'form3' => 'required|max:500',
@@ -34,6 +34,7 @@ class TextElementController extends Controller
             'form8' => 'required|max:500',
             'form9' => 'required|max:500',
         ]);
+
 
         DB::table('text_elements')->upsert([
 

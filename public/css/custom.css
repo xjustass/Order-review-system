@@ -31716,12 +31716,37 @@ video {
   z-index: -1;
 }
 
+@-webkit-keyframes example {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .hero{
   background-image: url("/images/hero3.png");
   background-position:  75% 120%;
   background-repeat: no-repeat;
   background-attachment: local;
   background-size: auto 95% ;
+  -webkit-animation-name: example;
+          animation-name: example;
+  opacity: 1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 @media (min-width: 640px) {
@@ -31747,7 +31772,7 @@ video {
 @media (min-width: 1024px) {
   .hero{
     background-image: url("/images/hero3.png");
-    background-position: 0% 100%;
+    background-position: 0% 120%;
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: auto 120% ;
@@ -31767,10 +31792,20 @@ video {
 @media (min-width: 1536px) {
   .hero{
     background-image: url("/images/hero3.png");
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: auto 140% ;
+  }
+}
+
+@media (min-height: 1100px) and (min-width: 1300px) {
+  .hero{
+    background-image: url("/images/hero3.png");
     background-position: 30% 85%;
     background-repeat: no-repeat;
     background-attachment: local;
-    background-size: auto 160% ;
+    background-size: 1600px auto ;
   }
 }
 

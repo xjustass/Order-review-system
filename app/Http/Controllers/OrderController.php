@@ -128,8 +128,6 @@ class OrderController extends Controller
 
         }
 
-
-
         $order->first_name = $request->fname;
         $order->last_name = $request->lname;
         $order->phone_number = $request->phone;
@@ -164,7 +162,7 @@ class OrderController extends Controller
 
     function generateCode(){
 
-        $size = 12;
+        $size = 6;
         $string = strtoupper(substr(md5(time().rand(10000,99999)), 0, $size));
         return $string;
     }

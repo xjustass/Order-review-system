@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <label>{{$t->name}}</label>
 
-                            <textarea class="form-control" id="form1" name="form{{$t->id}}" rows="3">{{$t->text}}</textarea>
+                            <textarea class="form-control" name="form{{$t->id}}" rows="3">{{$t->text}}</textarea>
 
                         </div>
                         @endforeach

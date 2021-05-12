@@ -1,20 +1,27 @@
 @extends('layouts.master')
 @section('content')
-<div class="bg-secondary font-body">
-    <div class="w-full mx-auto h-full max-w-screen-xl pt-20 md:pt-28 lg:pt-32 mx-0 lg:mx-auto flex flex-col md:flex-row items-center hero">
+<div class="bg-secondary font-body h-1/2">
+    <div class="w-full mx-auto h-full max-w-screen-xl pt-5 md:pt-28 lg:pt-32 mx-0 lg:mx-auto flex flex-col md:flex-row items-center hero">
 
         <!--Left Col-->
-        <div class="flex flex-col h-full w-full lg:w-5/6 lg:inline justify-center mt-10 lg:mt-20 pt-2 pb-24 px-4 md:px-6 mb-80 ">
+        <div class="flex flex-col h-full w-full lg:w-5/6 lg:inline justify-center lg:mt-20 pt-2 pb-24 px-4 md:px-6 mb-80 ">
 
-            <h1 class="font-bold text-white leading-tight text-3xl text-center lg:text-left sm:text-5xl md:text-7xl lg:leading-tight my-4 subpixel-antialiased">
+            <h1 class="font-bold text-white leading-tight text-3xl text-center lg:text-left sm:text-5xl md:text-6xl lg:leading-tight
+                        my-4 subpixel-antialiased duration-700 delay-150 relative transform transition-all translate-y-12 opacity-0 ease-out"
+                data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'>
                 Pasirūpinsime jūsų akumuliatoriais</h1>
 
-            <h2 class="leading-normal text-white text-base text-center lg:text-left lg:text-3xl lg:pt-3 lg:mb-16 font-light mb-4">Baterijų gamyba.
+            <h2 class="leading-normal text-white text-base text-center lg:text-left lg:text-3xl lg:pt-3 lg:mb-16 font-light mb-4
+                        duration-700 delay-300 relative transform transition-all translate-y-12 opacity-0 ease-out"
+                        data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'>
+                Baterijų gamyba.
                 Restauravimas.</h2>
 
             <a href="{{url('/kontaktai')}}" class="z-20 bg-primary whitespace-nowrap text-xl lg:text-2xl
-        rounded-full px-8 py-2.5 mt-5  sm:py-3 sm:mt-5  md:px-12 mx-auto lg:px-16 lg:py-5 border-2 border-electric hover:bg-electric
-        text-white hover:text-black hover:border-transparent items-center inline-flex focus:outline-none cursor-pointer">
+                    rounded-full px-8 py-2.5 mt-5  sm:py-3 sm:mt-5  md:px-12 mx-auto lg:px-16 lg:py-5 border-2 border-electric hover:bg-electric
+                    text-white hover:text-black hover:border-transparent items-center inline-flex focus:outline-none cursor-pointer
+                    duration-700 delay-350 relative transform transition-all translate-y-12 opacity-0 ease-out"
+                    data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'>
 
                 <span class="iconify text-xl sm:text-2xl  lg:text-3xl  mr-3" data-inline="false"
                       data-icon="clarity:phone-handset-solid"></span>
@@ -118,38 +125,58 @@
         </div>
 
 
-        <div class="lg:flex justify-center mx-auto max-w-xs md:max-w-sm lg:max-w-none items-center">
 
-            <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
 
-                <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore" style="font-size: 100px;"></span>
+        <div class="max-w-screen-lg mx-auto">
+            <!-- Grid wrapper -->
+            <div class="max-w-xs md:max-w-sm lg:max-w-none mx-auto lg:flex lg:flex-wrap">
 
-                <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
+                <!-- Grid column -->
+                <div class="w-full flex flex-col px-6 mb-24 lg:w-1/3 ">
+                    <!-- Column contents -->
+                    <div class="flex-1 px-2 py-6 bg-primary rounded-2xl shadow-lg">
+                        <span class="mx-auto text-electric iconify mt-4 flex-1" data-inline="false" data-icon="mdi:restore" style="font-size: 100px;"></span>
 
-                <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
+                        <div class="flex-1 px-6 py-4 h-full">
+                            <h4 class="text-center text-2xl mt-3 font-medium text-white ">Akumuliatorių restauravimas</h4>
+
+                            <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <div class="w-full flex flex-col px-6 mb-24  lg:w-1/3">
+                    <!-- Column contents -->
+                    <div class="flex-1 px-2 py-6 bg-primary rounded-2xl shadow-lg">
+                        <img class="w-32 mx-auto" src="{{asset('images/battery.svg')}}">
+
+                        <div class="px-6 py-4 h-full">
+                            <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių paketų gamyba</h4>
+
+                            <p class="text-center text-white mt-5">Gaminame akumuliatorių
+                                                                   paketus įvairiems prietaisams, darbo įrankiams,
+                                                                   žaislams, matavimo įrangai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid column -->
+                <div class="w-full flex flex-col px-6 mb-24   lg:w-1/3 ">
+                    <!-- Column contents -->
+                    <div class="flex-1 px-2 py-6 bg-primary rounded-2xl shadow-lg">
+                        <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="simple-icons:speedtest" style="font-size: 90px;"></span>
+                        <div class="px-6 py-4 h-full">
+                            <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių
+                                                                                         testavimas</h4>
+
+                            <p class="text-center text-white mt-5">Testuojame akumuliatorių
+                                                                   talpą ir vidinę varžą</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
-
-                <img class="w-32 mx-auto" src="{{asset('images/battery.svg')}}">
-
-                <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
-
-                <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
-            </div>
-
-
-            <div class="bg-primary rounded-2xl  lg:w-1/4 px-5 pt-5 pb-20 mx-6 mb-10">
-
-                <span class="mx-auto text-electric iconify mt-4" data-inline="false" data-icon="mdi:restore" style="font-size: 100px;"></span>
-
-                <h4 class="text-center text-2xl mt-3 font-medium text-white">Akumuliatorių restauravimas</h4>
-
-                <p class="text-center text-white mt-5">Restauruojame visų akumuliatorinių įrankių akumuliatorius</p>
-            </div>
-
         </div>
-
 
         <!-- Naudinga informacija -->
         <div class="text-center">
@@ -163,8 +190,6 @@
             <div class="md:flex mx-5 xs:mx-16 xl:mx-56">
 
                 @foreach($posts as $p)
-
-
 
                   <a href="{{route('post.view', $p->id)}}">
                     <div class="bg-white mx-4 border rounded-lg overflow-hidden hover:shadow-xl cursor-pointer">
@@ -191,6 +216,10 @@
 
     </div>
 </div>
+
+    <script>
+
+    </script>
 @endsection
 
 
