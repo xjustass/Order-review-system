@@ -221,7 +221,7 @@
 
                         <div class="form-group">
                             <label for="FormControlInput10">Papildoma informacija klinetui</label>
-                            <textarea name="notes_for_client" class="form-control @error('notes_for_client')border-red @enderror" id="FormControlInput10" value="{{$order->notes_for_client}}" rows="3"></textarea>
+                            <textarea name="notes_for_client" class="form-control @error('notes_for_client')border-red @enderror" id="FormControlInput10" rows="3">{{$order->notes_for_client}}</textarea>
                         </div>
                         @error('notes_for_client')
                         <div class="alert alert-danger">{{ $message }}</div>

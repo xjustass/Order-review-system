@@ -187,7 +187,7 @@
 
 
         <div class="mx-auto">
-            <div class="md:flex mx-5 xs:mx-16 xl:mx-56">
+            <div class="md:flex md:justify-center mx-5 xs:mx-16 xl:mx-56">
 
                 @foreach($posts as $p)
 

@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\DB;
 class TextElementController extends Controller
 {
 
+    protected function guard()
+    {
+        return Auth::guard(app('VoyagerGuard'));
+    }
 
     public function index()
     {
-
+        $this->authorize('isAdmin');
 
         $text = DB::table('text_elements')->get();
 
@@ -22,7 +26,7 @@ class TextElementController extends Controller
 
     public function update(Request $request)
     {
-
+        $this->authorize('isAdmin');
             $request->validate([
             'form1' => 'required|max:500',
             'form2' => 'required|max:500',

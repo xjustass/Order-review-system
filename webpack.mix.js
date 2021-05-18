@@ -11,6 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
+
+
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/custom.css', 'public/css', [
         require("tailwindcss"),
@@ -34,5 +36,5 @@ mix.js('resources/js/app.js', 'public/js')
             interval: 500
         }
     });
-
+mix.copy('resources/js/tiny.js', 'public/js');
 

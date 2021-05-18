@@ -12,7 +12,7 @@
 
             <p class="text-left text-base font-bold mb-6 md:mb-6 leading-tight tracking-tight text-gray-800 ">
                 {{ date('Y/m/d', strtotime($p->created_at))}} </p>
-            <p class="text-justify text-xl">
+
 
     {!!$p->body!!}
 

@@ -6,7 +6,7 @@
 
             @if(is_null($order))
 
-                <h2 class=" m-auto text-4xl sm:text-5xl  leading-tight font-extrabold tracking-tight text-gray-100 ">
+                <h2 class=" mx-auto mt-64 text-4xl sm:text-5xl  leading-tight font-extrabold tracking-tight text-gray-100 ">
                     <span class="iconify text-red-500 mx-auto text-9xl"  data-icon="gg:danger" data-inline="false"></span> Toks užsakymas neegzistuoja</h2>
             @else
                 <h2 class="mt-12 md:mt-28 text-4xl sm:text-5xl mb-12 md:mb-16 leading-tight font-extrabold tracking-tight text-gray-100 ">

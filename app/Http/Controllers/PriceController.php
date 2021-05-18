@@ -9,9 +9,15 @@ use Illuminate\Support\Facades\Gate;
 
 class PriceController extends Controller
 {
+    protected function guard()
+    {
+        return Auth::guard(app('VoyagerGuard'));
+    }
 
     public function index()
     {
+
+        $this->authorize('isAdmin');
 
         $services = ServicePrice::all();
 
@@ -22,9 +28,7 @@ class PriceController extends Controller
 
     public function create()
     {
-
-
-
+        $this->authorize('isAdmin');
         return view('vendor.voyager.text.prices.create');
     }
 
@@ -36,6 +40,7 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('isAdmin');
 
         $request->validate([
             'service_name' => 'required|max:255',
@@ -55,13 +60,13 @@ class PriceController extends Controller
     public function edit(ServicePrice $price)
     {
 
-
+        $this->authorize('isAdmin');
         return view('vendor.voyager.text.prices.edit', compact('price'));
     }
 
     public function update(Request $request,  $id)
     {
-
+        $this->authorize('isAdmin');
         $service=ServicePrice::find($id);
 
         $request->validate([
@@ -88,7 +93,7 @@ class PriceController extends Controller
      */
     public function destroy($id)
     {
-
+        $this->authorize('isAdmin');
         $service = ServicePrice::find($id);
         $service->delete();
 
