@@ -13,7 +13,7 @@
         <div class="font-body items-center justify-center" >
             <form class="rounded-full overflow-hidden inline-flex focus-within:ring-electric  focus-within:ring-2"  method="get" action="{{route('search')}}" >
 
-                <input type="text" name="search" class="py-2 text-sm px-2 sm:px-4 sm:py-4 w-48 sm:w-96 focus:outline-none" placeholder="Kodas">
+                <input type="text" name="search" class="py-2 text-sm px-2 sm:px-4 sm:py-4 w-48 sm:w-96 focus:outline-none" autocomplete="off" placeholder="Kodas">
 
                 <button class="sm:px-10 flex bg-primary hover:bg-electric focus:outline-none hover:text-primary text-3xl text-electric items-center justify-center px-4 border-l">
                     >
